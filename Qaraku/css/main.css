@@ -1,0 +1,166 @@
+/*总*/
+#total {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #3b5f78;
+    border-top: 8px #3b5f78 solid;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body {
+    /*background-image: url('your-background-image.jpg');*/
+    background-color: #3b5f78;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    /* 去除默认的页面边距 */
+    padding: 0;
+    /* 去除默认的页面内边距 */
+}
+
+/*第一行（学生管理系统那一行）*/
+#top {
+    height: 40px;
+}
+
+
+
+/*学生管理系统那一行的黄线*/
+.headerLine {
+    width: 400px;
+    display: inline;
+    text-align: center;
+    color: #c3a080;
+    font-size: 25px;
+    padding: 2px;
+}
+
+
+/*学生管理系统那几个字*/
+#header {
+    width: 400px;
+    display: inline;
+    color: #001127f6;
+    font-size: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 100px 11px;
+}
+
+/*第二行（按钮那一行）*/
+#second_line {
+    height: 40px;
+    text-align: left;
+}
+
+/*第三行（主体）*/
+#main {}
+
+/*表头*/
+#main thead {
+    text-align: center;
+}
+
+#main thead tr {
+    background-color: #dadee1;
+    height: 40px;
+}
+
+/*表主体*/
+.mainTbodyTr1 {
+    height: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+.mainTbodyTr2 {
+    height: 30px;
+    background-color: #eef1f8;
+    text-align: center;
+}
+
+/*第一列*/
+.col1 {
+    width: 50px;
+}
+
+/*第二列*/
+.col2 {
+    width: 60px;
+}
+
+/*第三列*/
+.col3 {
+    width: 180px;
+}
+
+/*第四列*/
+.col4 {
+    width: 180px;
+}
+
+/*第五列*/
+.col5 {
+    width: 180px;
+}
+
+/*第六列*/
+.col6 {
+    width: 180px;
+}
+
+/*第七列*/
+.col7 {
+    width: 80px;
+}
+
+/*第八列*/
+.col8 {
+    width: 80px;
+}
+
+/*第九列*/
+.col9 {
+    width: 80px;
+}
+
+/*第十列*/
+.col10 {
+    width: 130px;
+}
+
+#final {
+    margin-top: 15px;
+    height: 40px;
+}
+
+#final p {
+    display: inline;
+}
+
+/*点开后的页面*/
+#totalBackground {
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid #dadee1;*/
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #555;
+    z-index: 1;
+    /*-moz-opacity: 0.8;*/
+    opacity: .8;
+    /*filter: alpha(opacity=88);*/
+}
+
+td {
+    border-radius: 63px;
+}
+
+th {
+    border-radius: 63px;
+}

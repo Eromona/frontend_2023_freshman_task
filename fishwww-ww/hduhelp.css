@@ -1,0 +1,550 @@
+/* 设置整个页面的背景颜色 */
+body {
+  background-color: rgb(248, 247, 234); 
+}
+
+/* 标题居中设置 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+    
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+  
+.center-title {
+  text-align: center;
+}
+
+.tablehead1,
+.tablehead2,
+.tablehead3,
+.tablehead4,
+.tablehead5,
+.tablehead6,
+.tablehead7,
+.tablehead8,
+.tablehead9{
+  background-Color:#957003;
+  color:rgb(247, 223, 140);
+}
+
+
+/* 标题文字两侧添加横线 */
+.center-title {
+  position: relative;
+  text-align: center;
+  font-size: 24px; /* 调整标题文字的字体大小 */
+  color: rgb(157, 153, 147);
+}
+.center-title::before,
+.center-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 39%; /* 调整横线的宽度 */
+  height: 4px; /* 调整横线的粗细 */
+  background-color: #957003; /* 横线的颜色 */
+}
+.center-title::before {
+  left: 0;
+}
+
+.center-title::after {
+  right: 0;
+}
+
+
+
+/* 按钮 */
+  /* 大小 */
+  .button {
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px; /* 设置按钮的宽度 */
+    height: 40px; /* 设置按钮的高度 */
+    font-size: 18px; /* 设置按钮内字体的大小 */
+    }
+  
+    .button-go {
+     width:50px;
+     height:40px;
+     font-size:15px;
+     }
+
+    /* 颜色 */
+   .button-inquiry {
+     background-color: rgb(32, 144, 224);     /* 查询按钮不悬停时颜色 */
+     }
+    .button-newaddition {
+      background-color: rgb(6, 172, 6);        /* 新增按钮不悬停时颜色 */
+      }
+    .button-delete {
+      background-color: rgb(208, 13, 13);      /* 删除按钮不悬停时颜色 */
+      }
+    .button-screening {
+      background-color: rgb(194, 157, 35);                  /* 筛选按钮不悬停时颜色 */
+      }
+    .button-go {
+      background-color: rgb(194, 157, 35);                  /* 前往按钮不悬停时颜色 */
+      }
+
+    .button-inquiry:hover {       
+      background-color: rgb(0, 94, 161)      /* 查询按钮悬停时颜色 */
+      }
+    .button-newaddition:hover {
+      background-color: rgb(2, 128, 2)         /* 新增按钮悬停时颜色 */
+      }
+    .button-delete:hover {
+      background-color: rgb(171, 2, 2);        /* 删除按钮悬停时颜色 */
+      }
+    .button-screening:hover {
+      background-color: rgb(155, 130, 5);       /* 筛选按钮悬停时颜色 */
+      }
+    .button-go:hover {
+      background-color: rgb(155, 130, 5);       /* 前往按钮悬停时颜色 */
+    }
+
+
+
+/* “新增”模态对话框-按钮 */
+.modal-reset-button {
+  background-color: #f8eabe;                /* 重置按钮不悬停时颜色 */ 
+  color:#6b6349 ;                           
+}
+.modal-cancel-button {
+  background-color: rgb(208, 13, 13);     /* 取消按钮不悬停时颜色 */
+  border: 1px solid #000; 
+  color: rgb(255, 211, 211);     
+}
+.modal-yes-button {
+  background-color: rgb(6, 172, 6);        /* 确定按钮不悬停时颜色 */
+  border: 1px solid #000;   
+  color: rgb(200, 255, 200);       
+}
+.modal-reset-button:hover {
+  background-color: #fce085;                /* 重置按钮悬停时颜色 */
+}
+.modal-cancel-button:hover {
+  background-color: rgb(171, 2, 2);          /* 取消按钮悬停时颜色 */
+}
+.modal-yes-button:hover {
+  background-color:  rgb(2, 128, 2)            /* 确定按钮悬停时颜色 */
+}
+
+
+/*搜索栏*/     
+.search-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 160px; /* 设置搜索栏的宽度 */
+  height: 15px; /* 设置搜索栏的高度 */
+  font-size: 15px; /* 设置搜索栏内字体的大小 */
+}
+
+/* 按钮对齐 */
+.search-container {
+  display: flex; /* 使用弹性盒子布局 */
+  align-items: center; /* 垂直居中对齐 */
+}
+
+/* 表头文字居中 */
+th {
+  text-align: center; /* 文本水平居中对齐 */
+  vertical-align: middle; /* 文本垂直居中对齐 */
+  background-color:#f2f2f2;
+}
+td {
+  text-align: center; /* 文本水平居中对齐 */
+  vertical-align: middle; /* 文本垂直居中对齐 */
+  background-color:gainsboro
+}
+
+/* 复选框 */
+.checkbox {
+  display: inline-block;
+  position: relative;
+  width: 20px; /* 控制复选框的宽度 */
+  height: 20px; /* 控制复选框的高度 */
+}
+    
+.checkbox input[type="checkbox"] {
+  display: none; /* 隐藏默认的复选框 */
+}
+    
+.checkbox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333; /* 空心样式的边框 */
+  background-color: transparent; /* 背景透明 */
+  cursor: pointer;
+}
+    
+.checkbox input[type="checkbox"]:checked + label {
+  background-color: #333; /* 勾选后的实心样式 */
+}
+    
+    
+/* 页数栏 */
+.page-box {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 25px; /* 设置搜索栏的宽度 */
+      height: 10px; /* 设置搜索栏的高度 */
+      font-size: 15px; /* 设置搜索栏内字体的大小 */
+    }
+
+/* 固定页数栏的绝对位置 */
+ .container{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+ }   
+
+ /* 上一页，下一页 */
+ .previousPage{
+  width: 70px;
+  height:40px; 
+  color:white;
+  background-color: rgb(52, 173, 52);
+  border: 1px solid #000;
+  position: absolute;
+  bottom: 20px;
+  right: 110px;
+ }
+
+ .nextPage{
+  width: 70px;
+  height:40px; 
+  color:white;
+  background-color: #e11f1f;
+  border: 1px solid #000;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+ }
+
+
+
+/* 模态对话框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin:0;
+  padding: 0;
+  }
+  
+  .modal-content{
+  background-color: rgb(248, 247, 234);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 35%;
+  text-align: center; /* 文字居中 */
+  }
+
+  .doNotMind{
+    color: rgb(248, 247, 234);
+  }
+  
+  .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  }
+  
+  /* 修改模态对话框头部的背景颜色 */
+.modal-header {
+  background-color: #957003; 
+  color:rgb(239, 227, 182); /* 修改文字颜色，以确保对比度 */
+  padding: 10px;
+}
+    
+   /*无效*/      /* 悬停时的选项样式 */
+  .college option:hover{
+    background-color: blue;
+  }
+
+  /* 新增-取消按钮  */
+  .modal-cancel-button {
+    position: absolute;
+    bottom: 170px; /* 自定义按钮与底部的距离 */
+    right: 550px; /* 自定义按钮与右侧的距离 */
+  }
+
+  /* 新增-确定按钮 */
+  .modal-yes-button {
+    position: absolute;
+    bottom: 170px; /* 自定义按钮与底部的距离 */
+    right: 480px; /* 自定义按钮与右侧的距离 */
+  }
+
+  /* 新增-重置按钮 */
+  .modal-reset-button {
+    position: absolute;
+    bottom: 170px; /* 自定义按钮与底部的距离 */
+    right: 920px; /* 自定义按钮与右侧的距离 */
+  }
+ 
+
+  /* 默认按钮样式，带下划线 */
+.check-button {
+  text-decoration: underline;
+  border-bottom: 8px solid black; /* 2px 是下划线的粗细，你可以根据需要调整 */
+  font-weight: bold; /* 添加加粗效果 */
+}
+
+/* 鼠标悬停时移除下划线 */
+.check-button:hover {
+  text-decoration: none;
+ 
+}
+  /* 默认按钮样式，带下划线 */
+.delete-button {
+  text-decoration: underline;
+  border-bottom: 8px solid black; /* 2px 是下划线的粗细，你可以根据需要调整 */
+  font-weight: bold; /* 添加加粗效果 */
+}
+
+/* 鼠标悬停时移除下划线 */
+.delete-button:hover {
+  text-decoration: none;
+ 
+}
+ 
+
+
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* 查看-关闭按钮 */
+.close-button {
+  position: absolute;
+  top: 220px;
+  right: 460px;
+}
+
+
+
+/* 深色模式 */
+
+
+.darkModeButton{
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fbaf2d;
+  color: black;
+}
+.darkModeButton:hover{
+  background-color: #e09e2d;
+}
+.dark-mode.darkModeButton:hover{
+  background-color: rgb(79, 78, 78);
+}
+
+.dark-mode {
+  background-color: #242323;
+  color: #ffffff;
+}
+
+/* 按钮 */
+
+/* 删除按钮 */
+.dark-mode .button.button-delete {
+  background-color: darkred; 
+  color: #e8ebee;
+}
+.dark-mode .button.button-delete:hover{
+  background-color: rgb(179, 8, 8) ; 
+  color: #e8ebee;
+}
+
+/* 筛选按钮 */
+.dark-mode .button.button-screening {
+  background-color: rgb(110, 71, 19); 
+  color: #e8ebee;
+}
+.dark-mode .button.button-screening:hover {
+  background-color: rgb(161, 104, 29); 
+  color: #e8ebee;
+}
+
+/* 新增按钮 */
+.dark-mode .button.button-newaddition {
+  background-color: darkgreen; 
+  color: #e8ebee;
+}
+.dark-mode .button.button-newaddition:hover {
+  background-color: rgb(4, 156, 4); 
+  color: #e8ebee;
+}
+
+/* 查询按钮 */
+.dark-mode .button.button-inquiry {
+  background-color: rgb(23, 111, 188); 
+  color: #e8ebee;
+}
+.dark-mode .button.button-inquiry:hover {
+  background-color: rgb(31, 137, 230); 
+  color: #e8ebee;
+}
+
+/* 前往按钮 */
+.dark-mode .button.button-go{
+  background-color: rgb(110, 71, 19); 
+  color: #e8ebee;
+}
+.dark-mode .button.button-go:hover{
+  background-color: rgb(161, 104, 29); 
+  color: #e8ebee;
+}
+
+/* 上一页按钮 */
+.dark-mode .previousPage {
+  background-color: darkgreen !important;
+  color: #e8ebee !important;
+}
+.dark-mode .previousPage:hover {
+  background-color: rgb(4, 156, 4) !important;
+  color: #e8ebee !important;
+}
+
+/* 下一页按钮 */
+.dark-mode .nextPage {
+  background-color: darkred !important;
+  color: #e8ebee !important;
+}
+.dark-mode .nextPage:hover {
+  background-color: rgb(179, 8, 8) !important;
+  color: #e8ebee !important;
+}
+
+
+/* "新增"模态对话框-重置按钮 */
+.dark-mode .modal-reset-button{
+  background-color: rgb(110, 71, 19); 
+  color: #e8ebee;
+}
+.dark-mode .modal-reset-button:hover{
+  background-color: rgb(161, 104, 29); 
+  color: #e8ebee;
+}
+
+/* "新增"模态对话框-取消按钮 */
+.dark-mode .modal-cancel-button{
+  background-color: darkred !important;
+  color: #e8ebee !important;
+}
+.dark-mode .modal-cancel-button:hover{
+  background-color: rgb(179, 8, 8) !important;
+  color: #e8ebee !important;
+}
+
+/* "新增"模态对话框-确定按钮 */
+.dark-mode .modal-yes-button{
+  background-color: darkgreen; 
+  color: #e8ebee;
+}
+.dark-mode .modal-yes-button:hover{
+  background-color: rgb(4, 156, 4); 
+  color: #e8ebee;
+}
+
+
+/* 搜索框 */
+.dark-mode .search-box{
+  background-color: #100f0f;
+  color: #ffffff;
+}
+
+/* 标题“选课管理系统”及两侧横线 */
+.dark-mode .center-title{
+  color: #979797;
+}
+
+.dark-mode .center-title::after{
+  background-color: #979797;
+}
+
+.dark-mode .center-title::before{
+  background-color: #979797;
+}
+
+/* 页数栏 */
+.dark-mode .page-box{
+  background-color: #100f0f;
+  color: #ffffff;
+}
+
+/* 表头 */
+.dark-mode .tablehead1,
+.dark-mode .tablehead2,
+.dark-mode .tablehead3,
+.dark-mode .tablehead4,
+.dark-mode .tablehead5,
+.dark-mode .tablehead6,
+.dark-mode .tablehead7,
+.dark-mode .tablehead8,
+.dark-mode .tablehead9{
+  background-color:#585858 !important;
+  color: rgb(222, 220, 215)
+}
+
+/* 模态对话框 */
+.dark-mode .modal-header{
+  background-color: #585858; 
+  color:rgb(222, 220, 215); /* 修改文字颜色，以确保对比度 */
+}
+
+.dark-mode .modal-content{
+  background-color: #333;
+}
+
+.dark-mode .doNotMind{
+  color: #333;
+}
+
+.dark-mode .input-field,
+.dark-mode .college,
+.dark-mode .grade{
+  background-color:#100f0f !important;
+  color: #f2f2f2 !important;
+}
+
+/* 动态表格 */
+.dark-mode .dynamicTable{
+  background-color: #888 !important;
+}
+.dark-mode .dynamicButton{
+  color: rgb(179, 8, 8) !important;
+}

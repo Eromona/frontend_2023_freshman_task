@@ -1,0 +1,101 @@
+/* 
+ * @author 可爱天培
+ */
+
+
+a, img, button, input, textarea {
+    -webkit-tap-highlight-color:rgba(13, 19, 210, 0);
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    border: 0;
+    vertical-align:baseline;
+}
+
+body {
+    background-image: url('../images/图片1.png');
+    background-size: cover; /* 背景图像大小适应页面 */
+    background-repeat: no-repeat; /* 防止图像重复 */
+    background-attachment: fixed; /* 固定背景图像 */
+    font-size: 14px;
+    color: #333;
+    font-family: "Hiragino Sans GB", Tahoma, Arial, "Lantinghei SC", "Microsoft YaHei", "simsun", sans-serif;
+    min-width: 1080px;
+}
+
+
+.wrap {
+    max-width: 1080px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    position:relative
+}
+
+h1.title {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+table label { -ms-text-size-adjust: 100%; /*用于解决IE10 for WP8字体过大的问题*/ }
+td,th { margin: 0; text-indent: 0; vertical-align: middle; }
+tr img { margin-bottom: -4px; }
+tr.color1 { background: #ededed; }
+tr.color2 { background: #F4F4F4; }
+tr.color3 { background: #ffffff; }
+tr.color4 { background: #ffffdd; }
+.tableBorder { line-height: 1.8em; margin-bottom: 0.8em; margin-top: 0.4em; -ms-text-size-adjust: 100%; /*用于解决IE10 for WP8字体过大的问题*/ }
+.tableBorder th { text-align: left; }
+.tableBorder-thcenter th { text-align: center; }
+.tableBorder-tdcenter td { text-align: center; }
+.ui-sortable tr.color4 { cursor: move; }
+.noteinfo { font-weight: normal; font-size: 0.9em; color: #666; font-style: italic; }
+.tableFull { width: 100%; }
+.tdCenter { text-align: center; }
+.td5  { width: 5%; }
+.td10 { width: 10%; }
+.td15 { width: 15%; }
+.td20 { width: 20%; }
+.td25 { width: 25%; }
+.td30 { width: 30%; }
+.td35 { width: 35%; }
+table > tbody > tr > td:hover,
+table > tbody > tr > th:hover,
+table > tbody > tr:hover > td,
+table > tbody > tr:hover > th {background-color: #ffffdd;}
+/* table > tbody > tr:nth-of-type(odd) {background-color: #920707;} 奇数行的背颜色为 #F4F4F4，这是一种浅灰色 */
+/* table > thead > tr {background-color: #ffffff;}   表格头部的背景颜色为ededed,这是一种浅灰色*/
+
+table{border:none;line-height:1.8;box-shadow:0 0 0.1em rgba(0,0,0,0.3);}
+td,th{border:none;padding:0.5em; }
+td:last-child{border-right:none;}
+th:last-child{border-right:none;}
+
+table.table_hover > tbody > tr > td:hover,
+table.table_hover > tbody > tr > th:hover,
+table.table_hover > tbody > tr:hover > td,
+table.table_hover > tbody > tr:hover > th {background-color: #ffffdd;}
+/* table.table_striped > tbody > tr:nth-of-type(odd) {background-color: #F4F4F4;} */
+table.table_hover > tbody > tr > td:hover,
+table.table_hover > tbody > tr > th:hover,
+table.table_hover > tbody > tr:hover > td,
+table.table_hover > tbody > tr:hover > th {background-color: #ffffdd;}
+/* table.table_striped > tbody > tr:nth-of-type(odd) {background-color: #F4F4F4;} */
+
+a.handle-link {
+    color: #4352df;
+    text-decoration: none;
+}
+a.handle-link:hover {
+    text-decoration: underline;
+}
+
+.layui-input-group {
+    width: 100%;
+}

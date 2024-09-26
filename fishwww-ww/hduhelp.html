@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>选课管理系统</title>
+
+  <!-- css外部文件  -->
+  <link href="hduhelp.css" rel="stylesheet" type="text/css" />
+
+  <!-- js外部文件 -->
+  <script type="text/javascript" src="hduhelp.js"></script>
+
+  <!-- 响应式设计 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+</head>
+<body>
+  <h1 class="center-title" >选课管理系统</h1>
+
+  <!-- 搜索栏 -->
+  <input type="number" id="inputNumber" class="search-box" placeholder="请输入学号">
+
+  <!-- 查询 -->
+  <button id="inquiryButton" class="button button-inquiry" style="border: 1px solid #000;">查询</button> 
+  
+  <!-- 新增 -->
+  <button class="button button-newaddition" id="openAdditionModal" style="border: 1px solid #000;">新增</button> 
+
+  <!-- 新增-模态对话框 --> 
+  <div id="additionModal" class="modal">
+   <div class="modal-content">
+      <span class="close" id="closeAdditionModal">&times;</span>
+      <div class="modal-header"><h2>请输入要添加的学生信息</h2></div>
+      <p><strong>学号：</strong><input id="studentNumber" class="input-field" type="text" placeholder="" style="width: 247px; height: 27px; background-color:rgb(245, 245, 245); border: 1px solid #CCCCCC"></p>
+      <p><strong>姓名：</strong><input id="name" class="input-field" type="text" placeholder="" style="width: 247px; height :27px; background-color:rgb(245, 245, 245); border: 1px solid #CCCCCC"></p>
+      
+      <!-- 下拉式菜单-选择学院与专业 -->
+      <p><strong>学院：</strong>
+          <select id="college-select" class="college" style="width:250px; height:30px; background-color:rgb(245, 245, 245); border: 1px solid #CCCCCC">
+            <option value="请选择学院" disabled selected>请选择学院</option>
+            <option value="机械工程学院">机械工程学院</option>
+            <option value="电子信息学院">电子信息学院（微电子学院）</option>
+            <option value="通信工程学院">通信工程学院</option>
+            <option value="自动化学院">自动化学院（人工智能学院）</option>
+            <option value="计算机学院">计算机学院（软件学院）</option>
+            <option value="网络空间安全学院">网络空间安全学院（浙江保密学院）</option>
+            <option value="材料与环境工程学院">材料与环境工程学院</option>
+            <option value="理学院">理学院</option>
+            <option value="经济学院">经济学院</option>
+            <option value="管理学院">管理学院</option>
+            <option value="会计学院">会计学院</option>
+            <option value="外国语学院">外国语学院</option>
+            <option value="人文艺术与数字媒体学院">人文艺术与数字媒体学院</option>
+            <option value="法学院">法学院</option>
+            <option value="卓越学院">卓越学院</option>
+            <option value="圣光机联合学院">圣光机联合学院</option>
+          </select>
+     </p>
+     <p><strong>专业：</strong>
+      <select id="major-select" class="college" style="width:250px; height:30px; background-color:rgb(245, 245, 245); border: 1px solid #CCCCCC">
+        <option value="" disabled selected>请选择专业</option>
+      </select>
+     </p>
+     
+     <!-- 下拉式菜单-选择年级 -->
+     <p><strong>年级：</strong>
+      <select id="grade-select" class="grade" style="width:250px; height:30px; background-color:rgb(245, 245, 245); border: 1px solid #CCCCCC">
+        <option value="" disabled selected>请选择年级</option>
+        <option value="大一">大一</option>
+        <option value="大二">大二</option>
+        <option value="大三">大三</option>
+        <option value="大四">大四</option>
+      </select>
+
+      <p><strong>班级：</strong><input id="class" class="input-field" type="text" placeholder="请输入数字" style="width: 247px; height :27px; background-color:rgb(245, 245, 245); border: 1px solid #CCCCCC"></p>
+      <p class="doNotMind">...</p>
+
+      <!-- 重置按钮 -->
+      <button id="resetButton" class="modal-reset-button" onclick="reset()" style="border: 1px solid #000;">重置</button>
+      
+      <!-- 取消按钮 -->
+      <button id="cancelButton" onclick="resetAndCancel()" class="modal-cancel-button" >取消</button>
+
+      <!-- 确定按钮 -->
+      <button id="yesButton" onclick="addRowAndReset()" class="modal-yes-button">确定</button>
+
+    </div>
+
+  </div>
+  
+  
+  <!-- 删除  -->
+  <button class="button button-delete"  style="border: 1px solid #000;">删除</button>
+  
+  <!-- 筛选 -->
+  <button class="button button-screening" style="border: 1px solid #000;">筛选</button>
+  
+  <!-- 表格 -->
+  <table class="table" id="table">
+    <thead id="tablehead" class="tablehead">
+      <tr>
+        <th class="tablehead1"><input type="checkbox" class="checkbox" id="selectAll" style="width: 13px;"></th>
+        <th class="tablehead2">序号</th>
+        <th class="tablehead3">学号</th>
+        <th class="tablehead4">姓名</th>
+        <th class="tablehead5">学院</th>
+        <th class="tablehead6">专业</th>
+        <th class="tablehead7">年级</th>
+        <th class="tablehead8">班级</th>
+        <th class="tablehead9">操作</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody" class="tbody" style="background-color: #957003;">
+    </tbody>
+</table>
+    
+<!-- 页数栏 -->
+<div class="container">
+  <strong>页</strong>
+    <input type="text" class="page-box" placeholder="1">
+      <strong>/ 10</strong>
+      <button class="button button-go" >前往</button>
+</div>
+    
+<!-- 上一页，下一页 -->
+<button class="previousPage"><strong>&lt</strong>上一页</button>
+<button class="nextPage">下一页<strong>&gt</strong></button>
+    
+<!-- 深浅色模式切换按钮 -->
+<button id="darkModeButton" class="darkModeButton">浅色模式</button>
+  
+</body>
+
+</html>

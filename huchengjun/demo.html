@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生信息管理系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 标题 -->
+    <div class="title">
+        <h1>学生信息管理系统</h1>
+    </div>
+
+    <!-- 新增 删除 操作按钮 -->
+    <div class="action">
+        <button class="btn-add">新增</button>
+        <button class="btn-delete">删除</button>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="Main">
+        <!-- 表格首行 -->
+        <table class="main">
+            <thead class="fir-tb">
+                <tr>
+                    <th><input type="checkbox" class="check-all"></th>
+                    <th>序号</th>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>学院</th>
+                    <th>专业</th>
+                    <th>年级</th>
+                    <th>班级</th>
+                    <th>年龄</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr>
+                    <th><input type="checkbox" class="check-sg"></th>
+                    <th>1</th>
+                    <th>123456</th>
+                    <th>张三</th>
+                    <th>计算机学院</th>
+                    <th>软件工程</th>
+                    <th>2023</th>
+                    <th>1</th>
+                    <th>18</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" class="check-sg"></th>
+                    <th>2</th>
+                    <th>12345678</th>
+                    <th>李四</th>
+                    <th>会计学院</th>
+                    <th>会计学</th>
+                    <th>2023</th>
+                    <th>1</th>
+                    <th>18</th>
+                    <th>操作</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 新增学生信息收集表 -->
+        <div class="info">
+            <!-- 表头 -->
+            <div class="info-title">
+                <p>新增学生信息</p>
+            </div>
+
+            <!-- 表格主题 -->
+            <form class="info-main" autocomplete="off">
+                <!-- <div class="info-main"> -->
+                <!-- 序号<input type="text" class="num" name="num"><br /><br /> -->
+                <div class="table_td">学号</div><input type="text" class="num2" name="num2"><br /><br />
+                <div class="table_td">姓名</div><input type="text" class="uname" name="uname"><br /><br />
+                <div class="table_td">学院</div><input type="text" class="xy" name="xy"><br /><br />
+                <div class="table_td">专业</div><input type="text" class="zy" name="zy"><br /><br />
+                <div class="table_td">年级</div><input type="text" class="grade" name="grade"><br /><br />
+                <div class="table_td">班级</div><input type="text" class="class1" name="class1"><br /><br />
+                <div class="table_td">年龄</div><input type="text" class="age" name="age">
+                <!-- </div> -->
+                <!-- 表格底部按钮 -->
+                <div class="info-button">
+                    <!-- <button class="info-button-cancel">取消</button> -->
+                    <button class="info-button-submit">提交</button>
+                </div>
+            </form>
+
+
+        </div>
+        <!-- 底部信息栏 -->
+        <div class="btm-info">
+            <span class="show-info">
+                <p>第</p>
+                <p>1</p>
+                <P>页，共</P>
+                <p>0</p>
+                <p>条，(每页显示10条)</p>
+            </span>
+            <button class="btn-prev">上一页</button>
+            <button class="btn-next">下一页</button>
+        </div>
+        <!-- //查看学生信息 -->
+        <div id="examineBlock">
+            <div id="examineHeader">查看学生信息</div>
+            <div id="examineMain">
+                <table id="examineMessageTable">
+                    <tr>
+                        <td class="examineTableTd1">学号</td>
+                        <td class="examineTableTd2"><input type="text" id="stuId3" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td class="examineTableTd1">姓名</td>
+                        <td class="examineTableTd2"><input type="text" id="name3" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td class="examineTableTd1">学院</td>
+                        <td class="examineTableTd2"><input type="text" id="colg3" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td class="examineTableTd1">专业</td>
+                        <td class="examineTableTd2"><input type="text" id="profession3" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td class="examineTableTd1">年级</td>
+                        <td class="examineTableTd2"><input type="text" id="grade3" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <td class="examineTableTd1">班级</td>
+                        <td class="examineTableTd2"><input type="text" id="stuClass3" readonly /></td>
+                    </tr>
+                    <tr>
+                        <td class="examineTableTd1">年龄</td>
+                        <td class="examineTableTd2"><input type="text" id="age3" readonly /></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="text-align: right; height: 35px; padding-top: 5px; padding-right: 20px">
+                <button id="examineCancel" onclick="examineCancel()">取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

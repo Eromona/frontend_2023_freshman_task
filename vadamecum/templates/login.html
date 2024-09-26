@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang = "zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>用户登录界面</title>
+    <link rel="stylesheet" href="../static/styles/login.css">
+</head>
+<body>
+    <div id="app">
+        <div>
+            <ul>
+                <li>
+                    <a href="https://www.hduhelp.cn" target="_blank" >杭州官网</a>
+                </li>
+                <li>
+                    <a href="https://www.i.hdu.cn" target="_blank" >智慧杭电</a>
+                </li>
+                <li>
+                    <a href="https://www.webvpn.edu.hdu.cn" target="_blank" >杭电vpn</a>
+                </li>
+            </ul>
+            <div>
+                <form method="post" action="{{ url_for('login') }}">
+                    <div class="logo">
+                        <img src="../static/images/logos/logo.svg" alt="logo not found">
+                    </div>
+                    <span></span>
+                    <div class="logo">
+                        <img src="../static/images/logos/hduhelp.svg" alt="logo not found">
+                    </div>
+                    {{ form.hidden_tag() }}
+                    <label for="user">Email</label>
+                    <input type="text" id="user" name="user">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                          <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endwith %}
+                    <button type="submit">submit</button>
+                    <div>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            记住密码
+                        </label>
+                        <span style="display:inline-block;position: relative;cursor: pointer;">
+                            忘记密码
+                            <p>
+                                <span></span>
+                                请联系管理员qq：2742518001
+                            </p>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

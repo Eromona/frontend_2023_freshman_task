@@ -1,0 +1,243 @@
+.page-container {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* 定义两列,sidebar 和 main */
+    grid-template-rows: 50px 1fr; /* 定义两行,header 和 主体 */
+    grid-template-areas:
+    "header header"
+    "sidebar main";
+    margin: 0;
+}
+
+
+.header {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 20px 120px 1fr 200px 20px;
+    grid-template-areas: ". div . ul .";
+    background-color: #1d74b2;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    align-items: center;
+    height: 50px;
+}
+
+.header div {
+    display: grid;
+    grid-area: div;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.header ul {
+    display: grid;
+    grid-area: ul;
+    grid-template-columns: 30px 30px 30px 30px;
+    grid-column-gap: 20px;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.header ul img {
+    width: 25px;
+}
+
+
+/* sidebar样式 */
+.sidebar {
+    grid-area: sidebar;
+    width: 150px;
+    background-color: #223142;
+    color: #fff;
+    position: fixed;
+    top: 40px; /* 调整top值以适应header的高度 */
+    left: 0;
+    height: 100%;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+/* 主要内容区域样式 */
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 20px 1fr 10px;
+    grid-template-areas:
+            "block block block"
+            "title title title"
+            "table-action table-action table-action"
+            "left-margin table right-margin";
+}
+
+.left-margin {
+    grid-area: left-margin;
+}
+
+.right-margin {
+    grid-area: right-margin;
+}
+
+.block {
+    grid-area: block;
+    height: 28px;
+}
+.title {
+    grid-area: title;
+    background-color: #e9e9e9;
+    font-size: 12px;
+    padding: 10px 20px;
+}
+
+.title h3 {
+    float: left;
+    font-size: 1.17em;
+    color: #333;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+    /* table acton */
+.table-actions {
+    grid-area: table-action;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.search-box {
+    display: grid;
+    grid-template-columns: 30px 90px 125px 20px;
+    grid-template-areas: "span span box icon";
+}
+
+.search-box span {
+    grid-area: span;
+    font-size: 8px;
+    padding: 5px 0;
+    margin-top: 15px;
+}
+
+.search-input {
+    grid-area: box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-right-width: 0;
+    color: #666;
+    font-size: 12px;
+    height: 26px;
+    width: 125px;
+    padding-left: 5px;
+    padding-right: 0;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+.search-icon {
+    grid-area: icon;
+    align-items: center;
+    background: url("../images/icons/search.svg") no-repeat center;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.btn-group a {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px 20px;
+    background: #fff;
+    height: 20px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    color: #89949b;
+    text-align: center;
+    cursor: pointer;
+    transition: all .4s ease 0s;
+    border-radius: 2px;
+}
+
+.data-action {
+
+}
+
+.data-action a {
+    text-decoration: none;
+    color: #08c;
+    display: inline-block;
+    margin-right: 5px;
+    white-space: nowrap;
+    word-break: normal;
+    cursor: pointer;
+}
+
+
+.table {
+    grid-area: table;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+.table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr 1fr;
+}
+
+.table th {
+    font-size: 15px;
+    background-color: #4c5366;
+    color: #fff;
+    padding: 7px 6px;
+    font-weight: 400
+}
+
+
+.table td {
+    color: #666;
+    font-size: 15px;
+    border-bottom: 1px;
+    padding: 10px 6px;
+    word-wrap: break-word;
+    transition: all .4s ease 0s;
+    overflow: hidden;
+    text-align: center;
+}

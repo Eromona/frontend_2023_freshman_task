@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>学生信息管理系统</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/styles/main.css">
+</head>
+<body class="page-container">
+
+<header class="header">
+    <div>
+        <img src="../static/images/logos/logo.svg" alt="logo not found" style="width: 20px">
+        <img src="../static/images/logos/hduhelp.svg" alt="logo not found" style="width: 60px">
+    </div>
+    <ul>
+        <li><img src="../static/images/icons/wechat-fill.svg" alt="wechat" /></li>
+        <li><img src="../static/images/icons/QQ.svg" alt="QQ" ></li>
+        <li><img src="../static/images/icons/github-fill.svg" alt="github" ></li>
+        <li><img src="../static/images/icons/user-fill.svg" alt="manager" ></li>
+    </ul>
+</header>
+
+<div class="sidebar">
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">学生列表</a></li>
+        <li><a href="#">成绩管理</a></li>
+        <li><a href="#">课程表</a></li>
+    </ul>
+</div>
+
+<div class="main">
+    <!-- 这里放置您的主要内容 -->
+    <div class="block"></div>
+
+    <div class="title"><h3>学生信息管理</h3></div>
+
+    <div class="table-actions">
+
+        <div class="search-box">
+            <span></span>
+            <span>查找学生信息：</span>
+            <input type="text" placeholder="搜索学号、姓名..." class="search-input">
+            <input type="button" class="search-icon">
+        </div>
+
+        <div class="filterBtn">
+            <button>筛选</button>
+        </div>
+
+        <div class="btn-group">
+            <a style="background-color: #59cba0;color: #fff">新增</a>
+            <a>导入</a>
+            <a>导出</a>
+            <a>删除</a>
+        </div>
+    </div>
+
+    <div class="left-margin"></div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>年级</th>
+            <th>操作</th>
+            <th><input type="checkbox" id="select-all"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for student in students %}
+            <tr>
+                {% if not student.editing %}
+                <td>
+                    <input value="{{student.id}}">
+                </td>
+                {% else %}
+                <td>{{student.id}}</td>
+                {% endif %}
+
+                {% if not student.editing %}
+                <td>
+                    <input value="{{student.username}}">
+                </td>
+                {% else %}
+                <td>{{student.username}}</td>
+                {% endif %}
+
+                {% if not student.editing %}
+                <td>
+                    <input value="{{student.college}}">
+                </td>
+                {% else %}
+                <td style="white-space: nowrap">{{student.college}}</td>
+                {% endif %}
+
+                {% if not student.college %}
+                <td>
+                    <input value="{{student.major}}">
+                </td>
+                {% else %}
+                <td style="white-space: nowrap">{{student.major}}</td>
+                {% endif %}
+
+                {% if not student.editing %}
+                <td>
+                    <input value="{{student.grade}}">
+                </td>
+                {% else %}
+                <td>{{student.grade}}</td>
+                {% endif %}
+
+                <td class="data-action">
+                    <a class="edit-btn">编辑</a>
+                    <a class="delete-btn">删除</a>
+                </td>
+                <td><input type="checkbox" class="check"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="right-margin"></div>
+
+    <nav aria-label="Page navigation">
+        {% for page in students.iter_pages() %}
+        <a href="{{ url_for('index', page=page) }}">{{ page }}</a>
+        {% endfor %}
+    </nav>
+</div>
+
+<script src="../static/scripts/main.js"></script>
+
+</body>
+</html>

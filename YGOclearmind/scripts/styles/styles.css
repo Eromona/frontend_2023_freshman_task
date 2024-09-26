@@ -1,0 +1,118 @@
+html{
+    background-color: #EFECEA ;
+}
+.h1{
+    border-top: 6px solid;
+    position: relative;
+    color: #B8A38F;
+    margin-top: 25px;
+    margin-bottom: 50px;
+   
+}
+h1{
+    color: #9C9A98;
+    margin: 0;
+    position:absolute;
+    background-color:#EFECEA;
+    top:-25px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 150px 0 150px;
+    z-index: 0;
+}
+.floated{
+    width: 125px;
+    height: 50px;
+    color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#new{
+    font-size: 20px;
+    background-color: #78B567;
+ }
+#del{
+    font-size: 20px;
+    background-color: #C45D53;
+}
+tr:nth-child(2n-1){
+      background: #EFF1F9;
+}
+tr:nth-child(2n){
+    background: white;
+}
+table{
+    width: 100%;
+    height: 100%;
+    border-collapse:collapse;
+    margin-bottom: 75px;
+    z-index: 1;
+}
+td{
+    text-align: center;
+    z-index: 1;
+}
+
+#next{
+    float: right;
+    font-size: 20px;
+    background-color: #C45D53;
+}
+#last{
+    float: right;
+    left: 100%;
+    font-size: 20px;
+    background-color: #78B567;
+}
+#page2
+{
+    margin: 0 auto;
+    width: 700px;
+    border-top: 5px solid #555555;
+    border-bottom: 50px solid #555555;
+    border-left: 1px solid #F0F2F5;
+    border-right: 1px solid #F0F2F5;
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 500px;
+}
+#totalBackground{
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid #dadee1;*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #c4c2c1;
+    z-index:2;
+    /*-moz-opacity: 0.8;*/
+    opacity:.8;
+    /*filter: alpha(opacity=88);*/
+}
+#addtitle{
+    background-color: #555555;
+    margin: 0%;
+    padding-top: 0%;
+}
+#addname{
+    color: white;
+}
+#page2 td {
+    background-color: white;
+}
+#submit input[type="button"] {
+    background-color: white;
+  }
+  #submit1 {
+    margin-right: 10px; /* 设置右边距，避免重叠 */
+  }
+  
+  #submit2 {
+    margin-left: 10px; /* 设置左边距，避免重叠 */
+  }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width" />
+   <title>
+       学生管理系统
+   </title>
+   <link href="styles/styles.css" rel="stylesheet" />
+
+   </head>
+   <body>
+    <div id="total">
+      <div class="h1">
+       <h1>学生管理系统</h1>
+      </div>
+     <input type="button" class="floated" id="new" name="new" value="新增" onclick="addTmplFile()"/>
+     <input type="button" class="floated" id="del" name="del" value="删除"/>
+     <table class="table1" id="table1">
+        <tr>
+            <td><input type="checkbox" class="checkbox" id="first" name="first" title="first"/></td>
+            <th>序号</th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>年级</th>
+            <th>班级</th>
+            <th>年龄</th>
+            <th colspan="2">操作</th><!--别忘了两个单元格-->
+        </tr>
+     </table>
+     <p>第x页,共x条,(每页显示10条)
+     <input type="button" class="floated" id="next" value="下一页"/>
+     <input type="button" class="floated" id="last" value="上一条"/>
+     </p>
+     <script src="scripts/main.js" defer></script>
+    </div>
+    <div id="totalBackground"></div>
+    <div id="page2" style="background-color: #555555;">
+        <div id="addtitle" align="center">
+            <p id="addname">新增同学信息</p>
+        </div>
+        <table class="table2">
+            <tr>
+                <td class="table2td1" align="right">序号</td>
+                <td class="table2td2"><input id="number" type="text" placeholder="序号"/></td>
+                <td class="table2td1" align="right">学号</td>
+                <td class="table2td2"><input id="studynumber" type="text" placeholder="学号"/></td>
+            </tr>
+            <tr>
+                <td class="table2td1" align="right">姓名</td>
+                <td class="table2td2"><input id="name" type="text" placeholder="姓名"/></td>
+                <td class="table2td1" align="right">学院</td>
+                <td class="table2td2"><input id="school" type="text" placeholder="学院"/></td>
+            </tr>
+            <tr>
+                <td class="table2td1" align="right">学科</td>
+                <td class="table2td2"><input id="study" type="text" placeholder="学科"/></td>
+                <td class="table2td1" align="right">年级</td>
+                <td class="table2td2"><input id="grade" type="text" placeholder="年级"/></td>
+            </tr>
+            <tr>
+                <td class="table2td1" align="right">班级</td>
+                <td class="table2td2"><input id="class1" type="text" placeholder="班级"/></td>
+                <td class="table2td1" align="right">年龄</td>
+                <td class="table2td2"><input id="age" type="text" placeholder="年龄"/></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">
+                    <div id="submit1-container" style="float: right;">
+                      <input id="submit1" style="height: 35px; width: 80px;" type="button" value="提交" onclick="submit1()" />
+                    </div>
+                </td>
+                <td>
+                    <div id="submit3-container" style="float: right;">
+                        <input id="submit3" style="height: 35px; width: 80px; display: none;" type="button" value="取消" onclick="cancel()" />
+                      </div>
+                </td>
+                <td></td>
+                <td style="text-align: center;">
+                    <div id="submit2-container" style="float: right;">
+                      <input id="submit2" style="height: 35px; width: 80px;" type="button" value="提交" onclick="submit2()" />
+                    </div>
+                  </td>
+            </tr>
+        </table>
+         
+    </div>
+
+   </body> 
+</html>

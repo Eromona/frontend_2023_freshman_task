@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>杭州电子科技大学学生管理系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/layui@2.8.17/dist/css/layui.min.css" rel="stylesheet"> 
+    <!-- 引用了 layui 框架的样式 -->
+    <link rel="stylesheet" href="css/style.css" /> 
+    <!-- 引入自定义的 CSS 样式表 -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>  
+    <!-- js框架 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.5.1/dist/axios.min.js"></script>  
+    <!-- axios是一种请求库 -->
+    <script src="https://cdn.jsdelivr.net/npm/layui@2.8.17/dist/layui.min.js"></script>  
+    <!-- 引用了弹出层组件，创建网页的交互效果 -->
+  </head>
+  <body>dui'a
+    <div class="wrap">
+      <!-- 包裹整个网页 -->
+      <h1 class="title">学生管理系统</h1>
+      <!-- 网页标题 -->
+    
+      <div  x-data="{ items: [] }" x-init="() => { 
+          axios.get('./data.json').then(function (res) {
+          items = res.data;
+        });
+        }">
+       <!-- 初始化items，将在后面用于存储学生信息数据 -->
+       <!-- 使用 Axios 库发起 GET 请求来获取名为 "data.json" 的数据文件 ，当请求成功完成并响应时，执行 then 中的函数，获取数据部分，并将其赋值给名为 items-->
+        <table border="1" class="tableFull tableBorder tableBorder-tdcenter tableBorder-thcenter table_hover table_striped">
+          <!-- CSS 类的集合，定义表格的样式和行为 -->
+          <tbody>
+            <tr>
+              <th>序号</th>
+              <th>学号</th>
+              <th>姓名</th>
+              <th>学院</th>
+              <th>专业</th>
+              <th>年级</th>
+              <th>班级</th>
+              <th>年龄</th>
+              <th>操作</th>
+            </tr>
+            <template x-for="item in items" :key="item.id">
+              <!-- 动态生成表格行的部分 -->
+              <tr>
+                <td x-text="item.id"></td>
+                <td x-text="item.studentId"></td>
+                <td x-text="item.name"></td>
+                <td x-text="item.college"></td>
+                <td x-text="item.major"></td>
+                <td x-text="item.grade"></td>
+                <td x-text="item.class"></td>
+                <td x-text="item.age"></td>
+                <td><a href="javascript:;" @click="window.showInfo(item)" class="handle-link">查询</a></td>
+                <!-- 点击链接时，将触发 window.showInfo(item) 这个函数 -->
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      layui.use(function () {
+        var layer = layui.layer;
+        window.showInfo = function (stu) {
+          layer.open({
+          // 弹出层的函数
+            content: '\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      ID\
+                    </div>\
+                    <input type="text" value="'+stu.id+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      学号\
+                    </div>\
+                    <input type="text" value="'+stu.studentId+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      姓名\
+                    </div>\
+                    <input type="text" value="'+stu.name+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      学院\
+                    </div>\
+                    <input type="text" value="'+stu.college+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      专业\
+                    </div>\
+                    <input type="text" value="'+stu.major+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      年级\
+                    </div>\
+                    <input type="text" value="'+stu.grade+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      班级\
+                    </div>\
+                    <input type="text" value="'+stu.class+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="layui-form">\
+                <div class="layui-form-item">\
+                  <div class="layui-input-group">\
+                    <div class="layui-input-split layui-input-prefix">\
+                      年龄\
+                    </div>\
+                    <input type="text" value="'+stu.age+'" class="layui-input" disabled>\
+                  </div>\
+                </div>\
+              </div>\
+            ',
+            area: ['520px', '560px']
+          });
+        };
+      });
+    </script>
+  </body>
+</html>
+
+
